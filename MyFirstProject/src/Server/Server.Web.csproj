@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <UserSecretsId>ECE4E147-6E30-46B3-B8F3-EEE76192A0CD</UserSecretsId>
+        <ValidateExecutableReferencesMatchSelfContained>false</ValidateExecutableReferencesMatchSelfContained>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="Bit.CodeAnalyzers" Version="8.10.0-pre-05" PrivateAssets="all" />
+        <PackageReference Include="Bit.SourceGenerators" Version="8.10.0-pre-05" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.7" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\MyFirstProject.Server.Api\MyFirstProject.Server.Api.csproj" />
+        <ProjectReference Include="..\..\Client\MyFirstProject.Client.Web\MyFirstProject.Client.Web.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Using Include="MyFirstProject.Shared.Enums" />
+    </ItemGroup>
+
+    <!--
+    https://learn.microsoft.com/en-us/dotnet/core/docker/publish-as-container
+    https://learn.microsoft.com/en-us/visualstudio/containers/container-msbuild-properties
+    -->
+    <PropertyGroup>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <EnableSdkContainerDebugging Condition="'$(Configuration)' == 'Debug'">True</EnableSdkContainerDebugging>
+    </PropertyGroup>
+
+</Project>

@@ -1,0 +1,12 @@
+{
+  "solution": {
+    "path": "MyFirstProject.sln",
+    "projects": [
+      "src\\Server\\MyFirstProject.Server.Web\\MyFirstProject.Server.Web.csproj",
+      "src\\Server\\MyFirstProject.Server.Api\\MyFirstProject.Server.Api.csproj",
+      "src\\Shared\\MyFirstProject.Shared.csproj",
+      "src\\Client\\MyFirstProject.Client.Core\\MyFirstProject.Client.Core.csproj",
+      "src\\Client\\MyFirstProject.Client.Web\\MyFirstProject.Client.Web.csproj"
+    ]
+  }
+}
